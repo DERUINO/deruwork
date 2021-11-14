@@ -1,0 +1,389 @@
+@import 'fonts.scss';
+@import 'colors.scss';
+
+$container: #e3e3e3;
+
+a {
+    &:hover {
+        text-decoration: none; 
+    }
+}
+
+.chat {
+    padding: 5%;
+    padding-bottom: 0;
+    position: relative;
+
+    .title {
+        font-size: 34px;
+        font-family: $fontExtrabold;
+        padding-bottom: 2.5%;
+        text-align: center;
+    }
+
+    .back_dialogs {
+        text-align: center;
+        padding: 10px;
+
+         & a {
+            color: white;
+            text-decoration: underline;
+
+            &:hover {
+                color: gray;
+            }
+         }
+    }
+
+    .chatcontainer {
+        z-index: 9;
+        position: relative;
+        max-width: 700px;
+        width: 100%;
+        min-width: 400px;
+        height: 70vh;
+        background: $block_bg;
+        overflow: auto;
+        margin: 0 auto;
+        color: white;
+        box-shadow: 0 0 3px rgba(255,255,255,0.1);
+
+        .chataddcontainer {
+            display: none;
+
+            .flexbox {
+                display: flex;
+                position: absolute;
+                z-index: 10;
+                width: 100%;
+                height: 100%;
+                background: $block_bg;
+                top: 0;
+                left: 0;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                .chataddcontainer-title {
+                    padding: 20px;
+                    font-family: $fontSemibold;
+                    font-size: 20px;
+                }
+    
+                .bootstrap-select {
+                    width: 400px !important;
+                    border: none;
+                }
+    
+                .bootstrap-select>.dropdown-toggle {
+                    width: 100%;
+                    border: none;
+                    border-bottom: 3px solid $lime;
+                    outline: none;
+    
+                    &:hover {
+                        background: #3D3F49 !important;
+                    }
+    
+                    &:focus, &:active {
+                        background: #3D3F49 !important;
+                    }
+                }
+    
+                .messageblock {
+                    margin-top: 15px;
+    
+                    textarea {
+                        width: 400px;
+                        background: #3D3F49;
+                        border: none;
+                        border-bottom: 3px solid $lime;
+                        border-radius: 5px;
+                        outline: none;
+                        color: white;
+                        height: 150px;
+                        padding: 15px;
+                    }
+                }
+    
+                .submitblock {
+                    margin-top: 10px;
+    
+                    button {
+                        border: none;
+                        cursor: pointer;
+                        color: #fff;
+                        padding: 5px 15px;
+                        text-align: center;
+                        background: linear-gradient(90deg,#2ed297,#07b4cd);
+                        border-radius: 30px;
+                        box-shadow: 0 0 7px #2ed297;
+                        transition: all .3s;
+                        font-family: $fontSemibold;
+    
+                        &:hover {
+                            box-shadow: 0 0 15px $lime_hover;
+                        }
+                    }
+                }
+            }
+        }
+
+        .chat-navigationblock {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .searchblock {
+                position: relative;
+                width: 100%;
+                padding: 10px;
+
+                & img {
+                    top: 13px;
+                    width: 17px;
+                    position: absolute;
+                }
+
+                input {
+                    padding-left: 28px;
+                    width: 100%;
+                    border: none;
+                    background: none;
+                    outline: none;
+                    color: white;
+                }
+            }
+
+            .add-dialogblock {
+                margin-top: -3px;
+                margin-right: 7px;
+
+                & img {
+                    cursor: pointer;
+                    width: 25px;
+                }
+            }
+        }
+
+        a .chatblock {
+            text-decoration: none;
+            color: $text;
+        }
+
+        .chatblock {
+            cursor: pointer;
+            position: relative;
+            align-items: center;
+            display: flex;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+
+            &:hover {
+                background: rgba(255,255,255,0.1);
+            }
+
+            .dateblock {
+                position: absolute;
+                font-family: $fontSemibold;
+                font-size: 12px;
+                top: 10px;
+                right: 10px;
+                color: $lime;
+            }
+
+            .imgblock {
+                margin-left: 20px;
+
+                & img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    border: 2px solid gray;
+                }
+            }
+    
+            .textblock {
+                padding-bottom: 10px;
+                margin-left: 20px;
+                width: 100%;
+                
+                .title {
+                    padding-top: 10px;
+                    text-align: left;
+                    font-size: 18px;
+                    font-family: $fontSemibold;
+                    padding-bottom: 5px;
+                    color: $lime;
+                }
+
+                .slicedblock {
+                    display: flex;
+                    align-items: flex-end;
+
+                    .text-img {
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            box-shadow: 0 0 3px rgba(0,0,0,0.8);
+                            margin-right: 5px;
+                        }
+                    }
+
+                    .text {
+                        margin-right: 15px;
+                        font-size: 14px;
+                        text-align: left;
+                        font-family: $fontSemibold;
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+        }
+
+        .chatblock.unread {
+            background: rgba(46,210,151,0.2);
+
+            &:hover {
+                background: rgba(255,255,255,0.1);
+            }
+        }
+
+        .opened_chatblock {
+
+            .chatblock_header {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 15px 30px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+
+                .imgblock {
+                    & img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 2px solid $text;
+                    }
+                }
+
+                .title {
+                    padding: 0;
+                    padding-left: 10px;
+                    font-family: $fontSemibold;
+                    font-size: 18px;
+                    color: $lime;
+                }
+            }
+
+            .messagecontainer {
+
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                .ajax_messagecontainer {
+                    max-height: 100%;                   
+                    overflow: auto;
+
+                    &::-webkit-scrollbar {
+                        width: 0;
+                    }
+
+                    .messageblock.unchecked {
+                        background: rgba(255,255,255,0.1);
+                    }
+
+                    .messageblock {
+                        line-height: 1.3;
+                        position: relative;
+                        margin: 10px 15px;
+                        padding: 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: column;
+    
+                        .message {
+                            text-align: left;
+                            font-weight: bolder;
+    
+                            .title {
+                                text-align: left;
+                                font-family: $fontSemibold;
+                                font-size: 16px;
+                                padding-bottom: 0;
+                                color: white;
+                            }
+    
+                            div {
+                                color: $text;
+                                font-size: 15px;
+                            }
+    
+                            & a {
+                                text-decoration: underline;
+                            }
+                        }
+    
+                        .dateblock {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            font-size: 13px;
+                            font-weight: bolder;
+                        }
+                    }
+                }
+            }
+
+            .inputblock {
+                border-top: 1px solid rgba(255,255,255,0.2);
+                height: 60px;
+                width: 100%;
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                bottom: 0;
+
+                .textarea {
+                    width: 100%;
+                    margin-right: 5px;
+
+                    input {                      
+                        width: 100%;
+                        border: none;
+                        background: none;
+                        outline: none;
+                        color: white;
+                    }
+                }
+
+                .acceptbutton {
+                    position: relative;
+                    width: 30px;
+                    height: 30px;
+
+                    button {
+                        width: 30px;
+                        height: 30px;
+                        left: 0;
+                        opacity: 0;
+                        z-index: 10;
+                        position: absolute;
+                    }
+
+                    img {
+                        z-index: 9;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+}

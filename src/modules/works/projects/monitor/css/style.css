@@ -1,0 +1,545 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	cursor: default;
+	color: white;
+	font-family: GOTHIC;
+	background: #323232;
+}
+
+@font-face {
+	font-family: GOTHIC;
+	src: url(GOTHIC.ttf);
+}
+
+@font-face {
+	font-family: GOTHICBOLD;
+	src: url(GOTHICB.ttf);
+}
+
+@font-face {
+	font-family: GOTHICBOLDITALIC;
+	src: url(GOTHICBI.ttf);
+}
+
+@font-face {
+	font-family: GOTHICITALIC;
+	src: url(GOTHICI.ttf);
+}
+
+.bold {
+	font-weight: bolder;
+}
+
+.clicked {
+	color: #38B632 !important;
+	transition: 0.3s all;
+}
+
+.clicked2 {
+	color: #38B632 !important;
+	transition: 0.3s all;
+}
+
+.clicked3 {
+	color: #38B632 !important;
+	transition: 0.3s all;
+}
+
+.mycol {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.myrow {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.myborder {
+	border: 1px solid red;
+}
+
+.head_name {
+	font-family: GOTHICBOLD;
+	font-size: 50px;
+}
+
+.profile {
+	float: right;
+	padding-top: 18px;
+	font-size: 18px;
+}
+
+.profile_fix {
+	cursor: pointer;
+	padding-top: 2px;
+}
+
+.profile span {
+	margin-top: 3px;
+	margin-left: 7px;
+}
+
+.exit {
+	padding-right: 40px;
+	float: right;
+	padding-top: 18px;
+	font-size: 18px;
+}
+
+.exit span {
+	margin-top: 3px;
+	margin-left: 7px;
+}
+
+.exit_fix {
+	padding-top: 2px;
+}
+
+.separation {
+	padding: 0 30px;
+}
+
+.navigation {
+	padding: 60px 0 30px 0;
+	font-size: 20px;
+}
+
+.mainpage {
+	cursor: pointer;
+	color: #2FB0D7;
+}
+
+.events {
+	cursor: pointer;
+}
+
+.activation_block {
+	padding: 10px 20px 0 30px;
+	border: 1px solid #2EB6DE;
+	float: right;
+	font-size: 24px;
+	margin-bottom: 50px;
+}
+
+.activation_button {
+	padding-right: 12px;
+	padding-top: 10px;
+}
+
+.activation_text {
+	transition: 0.3s all;
+	cursor: pointer;
+	font-weight: bolder;
+	padding: 3px 15px 0 15px;
+}
+
+.activation_text:hover {
+	color: gray;
+	transition: 0.3s all;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 24px;
+}
+
+.switch input {
+	display:none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #38B632;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(31px);
+  -ms-transform: translateX(31px);
+  transform: translateX(31px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.info_block {
+	display: none;
+	font-size: 22px;
+	float: right;
+}
+
+.opened3 {
+	margin-bottom: 150px;
+}
+
+.indicators_block {
+	cursor: pointer;
+	position: relative;
+	border-radius: 30px;
+	border: 1px solid #2EB6DE;
+	padding: 15px 20px;
+	margin: 8px 0;
+}
+
+.indicators_text {
+	width: 250px;
+}
+
+.indicators_img {
+	padding: 0 25px 0 10px;
+}
+
+.indicators_size {
+	transition: 0.3s all;
+	font-weight: bolder;
+	position: absolute;
+	right: 25px;
+	padding: 0 15px 0 25px;
+}
+
+.water .indicators_size {
+	right: 30px;
+}
+
+.door .indicators_size {
+	right: 5px;
+}
+
+.move .indicators_size {
+	right: 35px;
+}
+
+.dot .indicators_size {
+	right: 40px;
+}
+
+.dot .indicators_text {
+	padding-top: 2px;
+}
+
+.dot .indicators_img {
+	padding-right: 27px;
+}
+
+.lostwater .indicators_size {
+	right: 35px;
+}
+
+.lostwater .indicators_img {
+	padding-right: 27px;
+}
+
+.gas .indicators_size {
+	right: 35px;
+}
+
+.gas .indicators_img {
+	padding-left: 12px;
+	padding-right: 33px;
+}
+
+.gas {
+	margin-bottom: 50px;
+}
+
+.info_opened {
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 70px;
+	z-index: 100;
+	padding: 20px 50px 30px 50px;
+	border-radius: 7px;
+	color: black;
+	background: white;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+
+/*Код для наведения на всплывающие блоки*/
+
+.temp1:hover .open_temp1 {
+	display: block;
+}
+
+.wat1:hover .open_wat1 {
+	display: block;
+}
+
+.dor1:hover .open_dor1 {
+	display: block;
+}
+
+.mov1:hover .open_mov1 {
+	display: block;
+}
+
+.dot1:hover .open_dot1 {
+	display: block;
+}
+
+.lstw1:hover .open_lstw1 {
+	display: block;
+}
+
+.gas1:hover .open_gas1 {
+	display: block;
+}
+
+
+.temp2:hover .open_temp2 {
+	display: block;
+}
+
+.wat2:hover .open_wat2 {
+	display: block;
+}
+
+.dor2:hover .open_dor2 {
+	display: block;
+}
+
+.mov2:hover .open_mov2 {
+	display: block;
+}
+
+.dot2:hover .open_dot2 {
+	display: block;
+}
+
+.lstw2:hover .open_lstw2 {
+	display: block;
+}
+
+.gas2:hover .open_gas2 {
+	display: block;
+}
+
+
+.temp3:hover .open_temp3 {
+	display: block;
+}
+
+.wat3:hover .open_wat3 {
+	display: block;
+}
+
+.dor3:hover .open_dor3 {
+	display: block;
+}
+
+.mov3:hover .open_mov3 {
+	display: block;
+}
+
+.dot3:hover .open_dot3 {
+	display: block;
+}
+
+.lstw3:hover .open_lstw3 {
+	display: block;
+}
+
+.gas3:hover .open_gas3 {
+	display: block;
+}
+
+/*Код для наведения на всплывающие блоки*/
+
+.info_title {
+	font-size: 16px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.info_status {
+	transition: 0.3s all;
+	margin: 5px;
+	padding-left: 20px;
+}
+
+.profile_info {
+	display: none;
+	z-index: 10;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,0.7);
+	position: fixed;
+}
+
+.profile_info_block {
+	padding: 20px 0 40px 0;
+	background: #323232;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.profile_close {
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	font-size: 20px;
+}
+
+.profile_title {
+	padding: 20px;
+	font-weight: bolder;
+	font-size: 20px;
+	text-align: center;
+}
+
+.profile_title span {
+	border-bottom: 2px solid white;
+}
+
+.profile_text {
+	margin: 5px 0;
+	font-size: 18px;
+}
+
+.profile_img {
+	margin: 20px 0;
+	text-align: center;
+}
+
+.events_opened {
+	text-align: center;
+}
+
+.events_opened th {
+	width: 200px !important;
+}
+
+.secondblock {
+	display: none;
+}
+
+.control_pages {
+	text-align: center;
+	font-size: 22px;
+}
+
+.control_pages a {
+	color: white;
+	display: block;
+	margin: 0 10px;
+}
+
+
+@media screen and ( max-width: 992px) {
+
+	.head_name,.profile,.exit,.navigation {
+		text-align: center;
+	}
+
+	.profile,.exit {
+		margin: 0 auto;
+		float: none;
+	}
+
+	.activation_block {
+		float: none;
+		margin-top: 20px;
+	}
+
+	.info_block {
+		float: none;
+	}
+
+	.exit {
+		padding-right: 0;
+	}
+}
+
+@media screen and ( max-width: 768px) {
+
+	.info_opened {
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 100%;
+	}
+
+	.profile_text {
+		text-align: center;
+	}
+}
+
+
+@media screen and ( max-width: 576px) {
+
+	.indicators_text {
+		padding-top: 5px;
+		width: 150px;
+		font-size: 16px;
+	}
+
+	.activation_text {
+		font-size: 16px;
+		padding-top: 8px;
+	}
+
+	.profile_title {
+		font-size: 16px;
+	}
+
+	.profile_text {
+		text-align: center;
+		padding: 0;
+	}
+
+	.events_opened th {
+		font-size: 14px !important;
+		width: 100% !important;
+	}
+
+}
+
+@media screen and ( min-width: 768px) {
+
+	html {
+	overflow-x: hidden;
+  	margin-right: calc(-1 * (100vw - 100%));
+	}
+}

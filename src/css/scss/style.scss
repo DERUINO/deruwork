@@ -1,0 +1,1340 @@
+@import 'fonts.scss';
+@import 'colors.scss';
+@import 'rules.scss';
+
+* {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	cursor: default
+}
+
+::-webkit-scrollbar {
+	width: 10px
+}
+
+::-webkit-scrollbar-thumb {
+	background: gray
+}
+
+.bolder {
+	font-weight: bolder
+}
+
+.mycol {
+	padding-left: 0;
+	padding-right: 0
+}
+
+.myrow {
+	margin-left: 0;
+	margin-right: 0
+}
+
+.myborder {
+	border: 1px solid red
+}
+
+.form_alert {
+	display: none;
+	color: white;
+	z-index: 1000;
+	position: fixed;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	font-size: 22px;
+	font-family: $fontLight;
+	background: rgba(0,0,0,0.7);
+	border-bottom: 3px solid $lime_hover;
+}
+
+.menu_button {
+	display: none;
+	position: fixed;
+	top: 20px;
+	right: 30px;
+	z-index: 100;
+	cursor: pointer;
+
+	& img {
+		width: 30px;
+	}
+}
+
+.error_form_block {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	z-index: 101;
+	color: $text;
+	text-align: center;
+	background: $block_bg;
+	display: none;
+
+	.close_button {
+		position: absolute;
+		right: 5%;
+		top: 5%;
+		font-size: 30px;
+		font-family: $fontExtrabold;
+		color: white;
+		cursor: pointer;
+	}
+
+	.flexbox {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+
+		.error_form_block_title {
+			font-family: $fontLight;
+			font-size: 24px;
+			margin-bottom: 15px;
+		}
+
+		.errorform {
+			margin: auto;
+
+			.input {
+				margin-bottom: 15px;
+
+				textarea {
+					outline: none;
+					max-width: 400px;
+					width: 100%;
+					padding: 5px 10px;
+					background: none;
+					color: $text;
+					height: 200px;
+					border-radius: 10px;
+					color: white;
+				}
+
+				button {
+					outline: none;
+					padding: 5px 15px;
+					border-radius: 30px;
+					border: none;
+					background: $gradient;
+					color: white;
+					font-family: $fontSemibold;
+					box-shadow: 0 0 10px $lime;
+					transition: 0.3s all;
+
+					&:hover {
+						box-shadow: 0 0 15px $lime_hover;
+					}
+				}
+			}
+		}
+	}
+}
+
+.authblock {
+	display: none;
+	top: 70px;
+	right: 5%;
+	color: $text;
+	z-index: 101;
+	background: $sidebar;
+	text-align: center;
+	width: 300px;
+	position: fixed;
+	padding: 15px;
+	border-bottom: 3px solid $lime_hover;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0 0 10px rgba(46,210,151,0.2);
+
+	 .close_auth {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 20px;
+		font-size: 30px;
+		font-family: $fontLight;
+		cursor: pointer;
+		color: white;
+	 }
+
+	.authblock__title {
+		font-family: $fontLight;
+		font-size: 22px;
+		padding-bottom: 15px;
+	}
+
+	.authblock__inputblock {
+
+		input {
+			color: $text;
+			width: 100%;
+			padding: 5px 10px;
+			margin-bottom: 10px;
+			border: none;
+			outline: none;
+			background: none;
+			border-bottom: 2px solid $lime_hover;
+		}
+
+		button {
+			outline: none;
+			cursor: pointer;
+			color: white;
+			padding: 5px 15px;
+			text-align: center;
+			border: none;
+			width: 150px;
+			background: $gradient;
+			margin: 15px 34px;
+			border-radius: 30px;
+			box-shadow: 0 0 7px $lime;
+			transition: 0.3s all;
+			font-family: $fontSemibold;
+			margin-bottom: 50px;
+			transition: 0.3s all;
+
+			&:hover {
+				transition: 0.3s all;
+				box-shadow: 0 0 15px $lime_hover;
+			}
+		}
+
+		.lostpass_btn {
+			margin-bottom: 10px;
+		}
+
+		.reg_link,.lostpass_link {
+			font-size: 14px;
+			
+			& a {
+				color: white;
+			}
+		}
+	}
+
+	.lost_password {
+		display: none;
+		margin-top: 20px;
+	}
+
+	.authblock__links {
+
+		.link {
+			font-size: 15px;
+			margin: 5px 0;
+			padding: 5px 10px;
+			display: flex;
+			align-items: center;
+
+			.imgblock {
+
+				& img {
+					width: 25px;
+				}
+			}
+
+			.ablock {
+				width: 100%;
+				margin-left: 10px;
+
+				& a {
+					display: block;
+					width: 100%;
+					height: 100%;
+					text-decoration: none;
+					color: $text;
+					border-bottom: 2px solid rgba(255,255,255,0.1);
+					padding-bottom: 5px;
+				}
+
+				& a:hover {
+					color: $lime;
+					border-bottom: 2px solid $lime;
+				}
+			}
+		}
+
+		.link.logout {
+			justify-content: center;
+			margin-top: 15px;
+			padding-bottom: 0;
+			margin-bottom: 0;
+
+			& a {
+				color: white;
+				font-family: $fontSemibold;
+			}
+		}
+	}
+}
+
+.toolbar.colored {
+	background: $block_bg;
+	border-bottom: 2px solid $lime_hover;
+}
+
+.toolbar {
+	width: 100%;
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+	padding: 10px 5%;
+	background: none;
+	transition: 0.3s all;
+	border-bottom: 2px solid transparent;
+
+	.searchblock {
+		position: relative;
+		width: 300px;
+		display: flex;
+		border-radius: 30px;
+		padding: 5px 10px;
+		background: rgba(255,255,255,0.2);
+
+		.submit {
+			position: relative;
+
+			input {
+				width: 25px;
+				height: 25px;
+				position: relative;
+				z-index: 10;
+				opacity: 0;
+				outline: none;
+				border: none;
+			}
+			
+			img,svg {
+				z-index: 9;
+				position: absolute;
+				width: 17px;
+				height: 17px;
+				top: 3px;
+				left: 0;
+			}
+		}
+
+		.input {
+			position: relative;
+			width: 100%;
+			input {
+				font-size: 15px;
+				color: white;
+				background: none;
+				border: none;
+				outline: none;
+				width: 100%;
+
+				&::placeholder {
+					color: rgba(255,255,255,0.5);
+				}
+			}
+		}
+	}
+
+	.profileblock {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	
+		a {
+			text-decoration: none;
+		}
+
+		.profileblock_messages {
+			position: relative;
+			margin-right: 30px;
+			cursor: pointer;
+	
+			& img,svg {
+				position: absolute;
+				width: 21px;
+				z-index: 1;
+				top: -1px;
+				left: -5px;
+			}
+	
+			.messages_count.null {
+				background: gray;
+				box-shadow: 0 0 1px white;
+				border: 1px solid #4D4D4D;
+			}
+	
+			.messages_count {
+				text-decoration: none;
+				margin-top: -5px;
+				margin-left: 10px;
+				padding-right: 2px;
+				padding-top: 2px;
+				position: relative;
+				z-index: 2;
+				color: white;
+				background: $lime;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				text-align: center;
+				font-family: $fontExtrabold;
+				font-size: 12px;
+				padding-bottom: 1px;
+				box-shadow: 0 0 5px $lime, 0 0 10px $lime, 0 0 15px $lime;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	
+		.profileblock__notification {
+			position: relative;
+			margin-right: 30px;
+			cursor: pointer;
+	
+			& img {
+				position: absolute;
+				width: 20px;
+				z-index: 1;
+			}
+	
+			.notification_count.null {
+				background: gray;
+				box-shadow: 0 0 1px white;
+				border: 1px solid #4D4D4D;
+			}
+	
+			.notification_count {
+				margin-top: -5px;
+				margin-left: 10px;
+				padding-right: 2px;
+				padding-top: 2px;
+				position: relative;
+				z-index: 2;
+				color: white;
+				background: $lime;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				text-align: center;
+				font-family: $fontExtrabold;
+				font-size: 12px;
+				padding-bottom: 1px;
+				box-shadow: 0 0 5px $lime, 0 0 10px $lime, 0 0 15px $lime;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	
+		.notification_list {
+			display: none;
+			position: absolute;
+			width: 300px;
+			background: $block_bg;
+			right: 5%;
+			top: 70px;
+			font-size: 11px;
+			color: white;
+			border-radius: 5px;
+			border-bottom: 3px solid $lime_hover;
+			box-shadow: 0 0 10px rgba(46,210,151,0.2);
+	
+			.notification_list_title {
+				font-family: $fontSemibold;
+				font-size: 16px;
+				padding: 10px;
+				border-bottom: 1px solid rgba(255,255,255,0.2);
+			}
+	
+			.notification_list_container {
+				height: 250px;
+				overflow: auto;
+	
+				.notification_list_text {
+					color: rgba(255,255,255,0.7);
+					padding: 10px;
+					border-bottom: 1px solid rgba(255,255,255,0.2);
+		
+					.text_info {
+						font-size: 13px;
+						color: white;
+					}
+		
+					&:hover {
+						background: rgba(255,255,255,0.1);
+					}
+				}
+	
+				.notification_list_text.unchecked {
+					border-bottom: 1px solid $lime_hover;
+					background: rgba(255,255,255,0.05);
+				}
+			}
+	
+			.notification_list_properties {
+				display: flex;
+				justify-content: space-between;
+				padding: 10px;
+				background: rgba(255,255,255,0.05);
+	
+				a {
+					color: white;
+				}
+				
+				.properties_more {
+	
+				}
+			}
+		}
+	
+		.profileblock__img {
+			cursor: pointer;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: 3px solid $lime;
+			box-shadow: 0 0 5px $lime;
+	
+			& img {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+.wrapper {
+	font-family: $fontLight;
+	display: flex;
+	height: 100vh;
+
+	.sidebar {
+		position: relative;
+		background: $sidebar;
+		min-height: 100vh;
+		height: 100%;
+		min-width: 240px;
+		width: 15%;
+
+		.sidebar_flex {
+
+			.close_sidebar {
+				display: none;
+				position: absolute;
+				top: 0;
+				right: 20px;
+				font-size: 30px;
+				font-family: $fontLight;
+				cursor: pointer;
+				color: white;
+			 }
+			
+
+			.sidebar__contactsblock {
+				background: rgba(255,255,255,0.05);
+
+				.sidebar__contactsblock__logoblock {
+					text-align: center;
+					padding: 15px 15px;
+					color: $sidebar_title;
+					animation: shadow infinite 5s ease-in-out;
+
+					@keyframes shadow {
+						50%
+						{
+							text-shadow: 0 0 5px white, 0 0 15px white;
+						}
+						100%
+						{
+							text-shadow: none;
+						}
+					}
+
+					.deru {
+						color: white;
+						font-family: $fontExtrabold;
+						font-size: 24px;
+					}
+
+					.working {
+						color: white;
+						line-height: 0.5;
+						font-family: $fontLight;
+						font-size: 14px;
+					}
+				}
+
+				.sidebar__contactsblock__links {
+					font-size: 16px;
+					text-align: center;
+					color: $sidebar_title;
+					padding: 15px;
+					padding-bottom: 25px;
+					line-height: 1.2;
+					font-family: $fontThin;
+					
+					.email {
+						font-size: 15px;
+						font-family: $fontLight;
+					}
+
+					.number {
+						font-family: $fontSemibold;
+					}
+				}
+			}
+
+			.sidebar__menublock {
+
+				margin-top: 50px;
+
+				.sidebar__menublock__linksblock {
+
+					.sidebar__menublock__linksblock__title {
+						color: $sidebar_title;
+						font-family: $fontSemibold;
+						font-size: 20px;
+						padding: 15px 30px;
+						padding-left: 34px;
+					}
+
+					.sidebar__menublock__linksblock__links {
+
+						.link {
+							cursor: pointer;
+							font-size: 16px;
+							padding: 10px 30px;
+							color: $text;
+							display: flex;
+							align-items: center;
+							margin: 5px 0;
+							border-left: 4px solid transparent;
+							transition: 0.3s all;
+
+							& svg {
+								fill: $text;
+								width: 20px;
+								margin-right: 20px;
+								margin-top: -2px;
+							}
+
+							&:hover {
+								transition: 0.3s all;
+								background: rgba(255,255,255,0.05);
+							}
+						}
+
+						a {
+							text-decoration: none;
+						}
+
+						.link.active {
+							color: $lime;
+							border-left: 4px solid $lime;
+							background: rgba(255,255,255,0.05);
+
+							& svg {
+								fill: $lime;
+							}
+						}
+					}
+				}
+			}
+
+			.sidebar__lkblock {
+				margin-top: 25px;
+
+				.button {
+					cursor: pointer;
+					color: white;
+					padding: 5px 15px;
+					text-align: center;
+					background: $gradient;
+					margin: 15px 34px;
+					border-radius: 30px;
+					box-shadow: 0 0 7px $lime;
+					transition: 0.3s all;
+					font-family: $fontSemibold;
+
+					&:hover {
+						transition: 0.3s all;
+						box-shadow: 0 0 15px $lime_hover;
+					}
+				}
+			}
+
+			.footer	{
+				position: absolute;
+				bottom: 15px;
+				text-align: center;
+				color: $text;
+				width: 100%;
+				text-decoration: underline;
+
+				.errorform_link {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.content {
+		position: relative;
+		width: 85%;
+		color: white;
+		height: 100vh;
+		overflow: auto;
+		background: #20222C;
+
+		.mobileblock {
+			display: none;
+
+			.sidebar__contactsblock {
+				background: rgba(255,255,255,0.05);
+
+				.sidebar__contactsblock__logoblock {
+					text-align: center;
+					padding: 15px 15px;
+					color: $sidebar_title;
+					animation: shadow infinite 5s ease-in-out;
+
+					@keyframes shadow {
+						50%
+						{
+							text-shadow: 0 0 5px white, 0 0 15px white;
+						}
+						100%
+						{
+							text-shadow: none;
+						}
+					}
+
+					.deru {
+						color: white;
+						font-family: $fontExtrabold;
+						font-size: 24px;
+					}
+
+					.working {
+						color: white;
+						line-height: 0.5;
+						font-family: $fontLight;
+						font-size: 14px;
+					}
+				}
+
+				.sidebar__contactsblock__links {
+					font-size: 16px;
+					text-align: center;
+					color: $sidebar_title;
+					padding: 15px;
+					padding-bottom: 25px;
+					line-height: 1.2;
+					font-family: $fontThin;
+					
+					.email {
+						font-size: 15px;
+						font-weight: bolder;
+					}
+				}
+			}
+		}
+
+		.mainblock {
+			background: url('images/mainblock.jpg') no-repeat center center;
+			position: relative;
+			padding: 5%;
+			padding-bottom: 1%;
+			margin-top: -60px;
+
+			.mainblock__mask {
+				top: 0;
+				left: 0;
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(to bottom, rgba(0,0,0,0.7), $bg);
+			}
+
+			.mainblock__title {
+				padding: 20px 0;
+				z-index: 2;
+				position: relative;
+				line-height: 1.2;
+				font-family: $fontExtrabold;
+				font-size: 50px;
+
+				.subtitle {
+					font-family: $fontLight;
+					font-size: 19px;
+					color: rgba(255,255,255,0.7);
+				}
+			}
+
+			.mainblock__bg {
+				z-index: -1;
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-width: 100%;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.mainblock__functionsblock {
+				margin-top: 100px;
+				position: relative;
+				z-index: 2;
+				color: $text;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+
+				.mainblock__functionsblock__function {
+					box-shadow: 0 0 20px rgba(46,210,151, 0.1);
+					width: 250px;
+					margin: 20px;
+					padding: 20px 30px;
+					background: $sidebar;
+					position: relative;
+					border-radius: 30px 0 30px 0;
+
+					.count {
+						font-family: $fontExtrabold;
+						position: absolute;
+						width: 40px;
+						height: 40px;
+						border-radius: 50%;
+						background: $lime;
+						color: white;
+						top: -15px;
+						left: -15px;
+						font-size: 18px;
+						text-align: center;
+						padding-top: 7px;
+						padding-right: 1px;
+					}
+
+					.title {
+						font-family: $fontExtrabold;
+						font-size: 20px;
+						line-height: 1.1;
+						color: $sidebar_title;
+						margin-bottom: 15px;
+					}
+
+					.text {
+						line-height: 1.2;
+					}
+				}
+			}
+		}
+
+		.secondblock {
+			display: flex;
+			padding: 5%;
+			background: $bg;
+
+			.secondblock__leftblock {
+				padding: 20px 0;
+				width: 60%;
+
+				.title {
+					font-family: $fontExtrabold;
+					font-size: 34px;
+					margin-bottom: 30px;
+				}
+
+				.text {
+					padding: 0 20px;
+					color: $text;
+				}
+			}
+
+			.secondblock__rightblock {
+				width: 40%;
+		
+				.secondblock__rightblock__caseblock {
+					display: flex;
+					align-items: center;
+					margin: 15px 0;
+
+					.imgblock {
+						text-align: center;
+						margin: 25px;
+
+						& img {
+							width: 70px;
+							height: 70px;
+						}
+					}
+	
+					.textblock {
+	
+						.title {
+							font-family: $fontSemibold;
+							font-size: 22px;
+							line-height: 1.2;
+							margin-bottom: 15px;
+						}
+	
+						.text {
+							color: $text;
+							line-height: 1.2;
+						}
+					}
+				}
+			}
+		}
+
+		.firdblock {
+			
+			padding: 1% 5%;
+			background: $bg;
+			position: relative;			
+
+			.firdblock__title {
+				padding: 0;
+				font-family: $fontExtrabold;
+				font-size: 34px;
+				margin-bottom: 30px;
+				position: relative;
+				z-index: 1;
+			}
+
+			.firdblock__container {
+				position: relative;
+				z-index: 1;
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+
+				.firdblock__caseblock {
+					box-shadow: 0 0 20px rgba(46,210,151, 0.1);
+					text-align: center;
+					background: $sidebar;
+					margin: 20px;
+					max-width: 260px;
+					width: 100%;
+					min-width: 200px;
+					padding: 30px 15px;
+	
+					.imgblock {
+						height: 100px;
+	
+						& img {
+							width: 70px;
+							height: 70px;
+						}
+					}
+	
+					.title {
+						font-family: $fontExtrabold;
+						font-size: 20px;
+						margin-bottom: 30px;
+					}
+	
+					.text {
+						margin-bottom: 30px;
+	
+						.line {
+							width: 100%;
+							height: 1px;
+							background: $lime;
+							margin: 5px 0;
+						}
+					}
+	
+					.price {
+						font-family: $fontExtrabold;
+						font-size: 30px;
+						color: $lime;
+						margin-bottom: 30px;
+					}
+	
+					.button {
+						cursor: pointer;
+						font-family: $fontSemibold;
+						font-size: 14px;
+						width: 100%;
+						padding: 10px 15px;
+						border: 2px solid $lime;
+						transition: 0.3s all;
+	
+						&:hover {
+							transition: 0.3s all;
+							background: $lime;
+						}
+					}
+
+					& a {
+						color: white;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		.quadblock {
+			padding: 5%;
+			background: $bg;
+			display: flex;
+
+			.quadblock__leftblock {
+				padding: 0;
+				width: 60%;
+
+				.title {
+					font-size: 34px;
+					font-family: $fontExtrabold;
+					margin-bottom: 30px;
+				}
+
+				.text {
+					padding: 0 20px;
+					color: $text;
+
+					.bolder {
+						font-family: $fontSemibold;
+						color: white;
+					}
+				}
+			}
+
+			.quadblock__rightblock {
+				width: 40%;
+
+				.title {
+					font-family: $fontSemibold;
+					font-size: 22px;
+					margin-top: 10px;
+					margin-bottom: 30px;
+
+					.free {
+						font-size: 14px;
+						padding: 5px;
+						background: $lime;
+						border-radius: 5px;
+						margin-left: 5px;
+					}
+				}
+
+				.form {
+					margin-bottom: 20px;
+
+					form {
+						
+						input {
+							color: white;
+							outline: none;
+							display: block;
+							max-width: 435px;
+							width: 100%;
+							padding: 5px 10px;
+							margin-bottom: 10px;
+							background: none;
+							border: none;
+							border-bottom: 2px solid $lime_hover;
+						}
+
+						input.checkbox {
+							display: inline;
+							width: 20px;
+						}
+					}
+				}
+
+				.button {
+					padding: 10px 15px;
+					margin-top: 15px;
+					border: none;
+					color: white;
+					outline: none;
+					width: 250px;
+					background: $gradient;
+					text-align: center;
+					font-family: $fontSemibold;
+					border-radius: 10px;
+					cursor: pointer;
+					transition: 0.3s all;
+
+					&:hover {
+						transition: 0.3s all;
+						box-shadow: 0 0 10px $lime_hover;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+
+	.menu_button {
+		display: block;
+	}
+
+	.authblock {
+		z-index: 1000;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.9);	
+
+			.authblock_flex {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				height: 100%;
+
+				.close_auth {
+					display: block;
+					top: 10px;
+					right: 30px;
+
+					img,svg {
+						width: 30px;
+					}
+
+					&:hover {
+						color: gray;
+					}
+				}
+
+				.authblock__authcontainer {
+					width: 300px;
+					padding: 15px;
+					background: $bg;
+					border-bottom: 3px solid $lime_hover;
+					border-radius: 0 0 5px 5px;
+				}
+			}
+	}
+
+	.toolbar {
+		display: none;
+	}
+	
+	.profileblock {
+		display: none;
+	}
+
+	.wrapper {
+		display: block;
+
+		.content {
+			width: 100%;
+
+			&::-webkit-scrollbar {
+				width: 0;
+			}
+
+			.contactsblock {
+				display: block;
+			}
+		}
+
+		.sidebar {
+			position: fixed;
+			display: none;
+			z-index: 999;
+			flex-direction: column;
+			justify-content: center;
+			width: 100%;
+			align-items: center;
+
+			.sidebar_flex {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				height: 100%;
+
+				.close_sidebar {
+					display: block;
+					top: 10px;
+					right: 30px;
+
+					img,svg {
+						width: 30px;
+					}
+
+					&:hover {
+						color: gray;
+					}
+				 }
+
+				.sidebar__contactsblock {
+					display: none;
+				}
+
+				.sidebar__menublock {
+					width: 60%;
+
+					.sidebar__menublock__linksblock__title {
+						text-align: center;
+					}
+				}
+
+				.sidebar__lkblock {
+					.button {
+						width: 200px;
+					}
+				}
+			}
+		}
+
+		.mobileblock {
+			display: block !important;
+
+			.sidebar__contactsblock {
+				.sidebar__contactsblock__links {
+					.number {
+						font-family: $fontSemibold;
+					}
+
+					.email {
+						font-weight: normal !important;
+					}
+				}
+			}
+		}
+
+		.mainblock {
+			margin-top: 0 !important;
+
+			.mainblock__functionsblock {
+				justify-content: center !important;
+			}
+		}
+
+		.firdblock {
+
+			.firdblock__title {
+				text-align: center;
+			}
+
+			.firdblock__container {
+				justify-content: center !important;
+			}
+		}
+
+		.quadblock {
+			text-align: center;
+			flex-direction: column;
+			align-items: center;
+	
+			.quadblock__leftblock {
+				width: 100% !important;
+				margin: 50px 0;
+			}
+	
+			.quadblock__rightblock {
+				width: 100% !important;
+	
+				.button {
+					margin: 0 auto;
+					margin-bottom: 50px;
+				}
+
+				.form {
+					form {
+						input {
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.secondblock {
+		display: block !important;
+
+		.secondblock__leftblock {
+			width: 100% !important;
+		}
+
+		.secondblock__rightblock {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100% !important;
+			justify-content: center;
+
+			.secondblock__rightblock__caseblock {
+				display: block !important;
+				width: 180px;
+				text-align: center;
+				margin: 10px !important;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+
+	.sidebar__menublock {
+		width: 300px !important;
+	}
+
+	.profileblock {
+		display: none;
+	}
+
+	.mainblock {
+		background: linear-gradient(-200deg, $block_bg, #41E1E1 60%) !important;
+		text-align: center;
+		padding: 2.5%;
+
+		.mainblock__title {
+			font-size: 34px !important;
+
+			.subtitle {
+				margin-top: 30px;
+			}
+		}
+
+		.mainblock__functionsblock {
+			margin-top: 50px !important;
+		}
+	}
+
+	.secondblock {
+		text-align: center;
+
+		.secondblock__leftblock {
+
+			.title {
+				margin-top: 50px;
+			}
+		}
+	}
+
+	.firdblock {
+		text-align: center;
+
+		.firdblock__title {
+			margin-top: 50px;
+		}
+	}
+
+	.quadblock {
+		.quadblock__rightblock {
+			padding: 0 25px;
+		}
+	}
+}
+

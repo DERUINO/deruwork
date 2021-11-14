@@ -1,0 +1,162 @@
+@import 'fonts.scss';
+@import 'colors.scss';
+
+.userinfo {
+    padding: 5%;
+
+    .userinfo_block {
+        text-align: center;
+
+        .userinfo_title {
+            font-size: 34px;
+            padding-bottom: 5%;
+            text-align: center;
+            font-family: $fontExtrabold;
+        }
+
+        .myinfo {
+            max-width: 400px;
+            width: 100%;
+            background: $block_bg;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            border-radius: 0 0 5px 5px;
+            border-bottom: 5px solid $lime_hover;
+
+            .myinfo_title {
+                padding: 15px 0;
+                margin-bottom: 15px;
+                background: rgba(255,255,255,0.05);
+            }
+
+            .myinfo_block {
+                font-size: 18px;
+                margin-bottom: 20px;
+
+                .myinfo_img {
+                    margin: 30px auto 0 auto;
+                    width: 120px;
+                    height: 120px;
+
+                    img,svg {
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                        box-shadow: 0 0 5px $lime_hover;
+                        border: 3px solid $lime;
+                    }
+                }
+
+                .myinfo_login {
+                    font-size: 26px;
+                    font-family: $fontExtrabold;
+                    color: $lime;
+                    padding: 15px 0;
+                }
+
+                .myinfo_group {
+                    color: $text;
+                }
+
+                .lowcase {
+                    color: white;
+                    font-family: $fontSemibold;
+                    font-size: 14px;
+                }
+            }
+
+            .myinfo_block.first {
+                position: relative;
+                margin-bottom: 0;
+
+                input {
+                    cursor: pointer;
+                }
+
+                .add_file {
+                    cursor: pointer;
+                    transform: translateX(-50%);
+                    width: 120px;
+                    height: 120px;
+                    top: 0;
+                    left: 50%;
+                    position: absolute;
+                    z-index: 10;
+                    opacity: 0;
+                    border-radius: 50%;
+                }
+
+                .myinfo_img {
+                    position: relative;
+                    z-index: 9;
+                }
+
+                .upload_button {
+                    cursor: pointer;
+                    background: none;
+                    color: white;
+                    border: none;
+                    font-size: 12px;
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: gray;
+                    }
+                }
+            }
+        }
+
+        .useredit {
+            max-width: 400px;
+            width: 100%;
+            background: $block_bg;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            border-radius: 0 0 5px 5px;
+            border-bottom: 5px solid $lime_hover;
+    
+            .useredit_title {
+                padding: 15px 0;
+                margin-bottom: 15px;
+                background: rgba(255,255,255,0.05);
+            }
+
+            .useredit_block {
+                margin-top: 30px;
+                .edit_input {
+                    margin-bottom: 20px;
+                    padding: 0 10%;
+
+                    & input {
+                        outline: none;
+                        padding: 5px 10px;
+                        text-align: center;
+                        width: 100%;
+                        font-size: 14px;
+                        background: none;
+                        border: none;
+                        border-bottom: 3px solid $lime_hover;
+                        color: white;
+                    }
+                }
+
+                .button {
+                    box-shadow: 0 0 10px #229a6e;
+                    outline: none;
+                    background: linear-gradient(90deg,#2ed297,#07b4cd);
+                    color: #fff;
+                    font-family: ProximaNovaSemiBold;
+                    padding: 5px 20px;
+                    border: none;
+                    text-align: center;
+                    border-radius: 30px;
+                    margin-bottom: 30px;
+
+                    &:hover {
+                        box-shadow: 0 0 15px $lime_hover;
+                    }
+                }
+            }
+        }
+    }
+}

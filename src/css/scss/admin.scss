@@ -1,0 +1,403 @@
+@import 'fonts.scss';
+@import 'colors.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background: $block_bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+
+    .flex {
+        padding: 30px 15px;
+        background: rgba(255,255,255,0.05);
+
+        .container-title {
+            font-family: $fontExtrabold;
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .container-block {
+            width: 300px;
+
+            .input {
+                margin-bottom: 15px;
+
+                input {
+                    padding: 7px 15px;
+                    background: none;
+                    border: none;
+                    text-align: center;
+                    border-bottom: 3px solid $lime_hover;
+                    outline: none;
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+
+            .enter {
+                margin-top: 25px;
+
+                button {
+                    outline: none;
+                    border: none;
+                    background: none;
+                    box-shadow: 0 0 15px $lime;
+                    background: $gradient;
+                    color: white;
+                    font-family: $fontSemibold;
+                    padding: 5px 15px;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.wrapper {
+    position: relative;
+    background: $bg;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-family: $fontLight;
+    padding-top: 45px;
+
+    .flex {
+        display: flex;
+
+        .sidebar {
+            width: 15%;
+            min-width: 200px;
+            height: 100vh;
+            position: relative;
+            background: $sidebar;
+            padding: 0 1%;
+
+            .sidebar-title {
+                margin-top: 15px;
+                padding: 15px 0;
+                text-align: center;
+                font-size: 16px;
+                font-family: $fontLight;
+
+                .name {
+                    font-family: $fontSemibold;
+                    font-size: 22px;
+                }
+            }
+
+            .sidebar-menublock {
+                padding: 15px 0;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                .menublock-link {
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    border-bottom: 1px solid $lime_hover;
+                    font-size: 14px;
+
+                    &:hover {
+                        background: rgba(255,255,255,0.05);
+                    }
+                }
+
+                .menublock-link.border-top {
+                    border-top: 1px solid $lime_hover;
+                }
+            }
+        }
+
+        .contentblock {
+            overflow: auto;
+            width: 85%;
+            height: 100vh;
+            position: relative;
+            padding: 0 15px;
+
+            .flex {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                .block {
+                    flex-grow: 1;
+                    width: 25%;
+                    padding: 15px;
+                    background: $block_bg;
+                    margin: 30px 15px;
+                    border-radius: 10px;
+
+                    .block-title {
+                        font-size: 18px;
+                        font-family: $fontSemibold;
+                        padding-bottom: 15px;
+                    }
+
+                    .block-content {
+                        font-size: 14px;
+                    }
+                }
+
+                .block.accounts {
+                    background: #EE4749;
+                    border-bottom: 5px solid #7D2527;
+
+                    a {
+                        color: white;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .search {
+                        position: relative;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 15px;
+
+                        input {
+                            width: 100%;
+                            background: none;
+                            border: none;
+                            padding: 10px 15px;
+                            background: #C13A3C;
+                            border-radius: 10px;
+                            outline: none;
+                            color: white;
+                            text-align: center;
+                            position: relative;
+
+                            &::placeholder {
+                                color: rgba(255,255,255,0.8);
+                            }
+                        }
+
+                        button {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            background: none;
+                            border: none;
+                            outline: none;
+                            width: 15px;
+                            height: 15px;
+                            cursor: pointer;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .block.accountinfo {
+
+                     .block-content {
+
+                        .block-content-title {
+                            margin-bottom: 15px;
+                            font-family: $fontSemibold;
+                            font-size: 20px;
+                        }
+
+                        .infoblock {
+                            .flex {
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+
+                            .accountinfo-row {
+                                margin-bottom: 15px;
+
+                                .bold {
+                                    font-size: 16px;
+                                    font-family: $fontSemibold;
+                                }
+
+                                input {
+                                    outline: none;
+                                    margin-top: 5px;
+                                    padding: 5px;
+                                    font-size: 16px;
+                                    font-family: $fontSemibold;
+                                    color: white;
+                                    border: none;
+                                    background: none;
+                                    background: rgba(255,255,255,0.05);
+                                    height: 30px;
+                                    border-bottom: 2px solid transparent;
+                                }
+
+                                .input {
+                                    outline: none;
+                                    margin-top: 5px;
+                                    padding: 5px;
+                                    font-size: 16px;
+                                    font-family: $fontSemibold;
+                                    color: white;
+                                    border: none;
+                                    background: none;
+                                    background: rgba(255,255,255,0.05);
+                                    height: 30px;
+                                    border-bottom: 2px solid transparent;
+                                }
+
+                                input.selected {
+                                    color: $lime;
+                                    border-bottom: 2px solid $lime;
+                                }
+
+                                button {
+                                    outline: none;
+                                    margin-top: 30px;
+                                    cursor: pointer;
+                                    box-shadow: 0 0 15px $lime_hover;
+                                    background: $gradient;
+                                    padding: 5px 15px;
+                                    font-family: $fontSemibold;
+                                    color: white;
+                                    border: none;
+                                    border-radius: 30px;
+                                    transition: 0.3s all;
+                                    margin-bottom: 30px;
+
+                                    &:hover {
+                                        box-shadow: 0 0 15px $lime;
+                                    }
+                                }
+                            }
+
+                            .edit_button {
+                                margin-top: 4px;
+                                cursor: pointer;
+                                margin-left: 15px;
+                                width: 35px;
+                                height: 20px;
+                                background: gray;
+                                border-radius: 30px;
+                                position: relative;
+
+                                .switch {
+                                    position: absolute;
+                                    top: 1px;
+                                    left: 1px;
+                                    width: 18px;
+                                    height: 18px;
+                                    border-radius: 50%;
+                                    background: white;
+                                }
+                            }
+
+                            .accountinfo-row.group {
+                                line-height: 1.5;
+                            }
+                        }
+
+                        .infoblockLogs {
+
+                            table {
+                                border: 1px solid #dddddd;
+	                            border-collapse: collapse; 
+                                color: white;
+
+                                td,th {
+                                    padding: 10px;
+                                    border: 1px solid gray;
+                                }
+                            }
+                        }
+                     }
+                }
+
+                .block.big {
+                    background: #0171C1;
+                    border-bottom: 5px solid #002F50;
+                    margin: 0 15px;
+                    flex-grow: 3;
+                }
+
+                .block.pages {
+                    background: #985EE6;
+                    border-bottom: 5px solid #472C6B;
+                }
+
+                .block.stats {
+                    background: #FF7D04;
+                    border-bottom: 5px solid #7A3C02;
+
+                    .stats-row {
+                        margin-bottom: 15px;
+
+                        .bold {
+                            font-size: 16px;
+                            font-family: $fontSemibold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.toolbar {
+    padding: 10px 15px;
+    background: $sidebar;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    color: white;
+    border-bottom: 2px solid $lime_hover;
+    flex-wrap: wrap;
+    
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .toolbar-title {
+            font-family: $fontSemibold;
+        }
+
+        .toolbar-back {
+            font-size: 14px;
+            margin-right: 30px;
+            padding: 5px 10px;
+            font-family: $fontSemibold;
+            background: rgba(255,255,255,0.1);
+            transition: 0.3s all;
+
+            &:hover {
+                background: $lime_hover;
+                color: rgba(255,255,255,0.5);
+            }
+        }
+    }
+}

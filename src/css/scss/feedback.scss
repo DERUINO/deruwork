@@ -1,0 +1,246 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.mycol {
+	padding: 0;
+}
+
+.myrow {
+	margin: 0;
+}
+
+.hidden_name {
+	display: none;
+}
+
+.feed_line {
+	width: 90%;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.feed_line_fix {
+	width: 100%;
+	text-align: center;
+	box-shadow: 0 0 10px rgba(255,255,255,0.1);
+	border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+.wrapper {
+	color: white;
+	width: 100%;
+}
+
+.feedback {
+	padding: 5%;
+}
+
+.wrapper_title {
+	padding-bottom: 5%;
+	font-family: $fontExtrabold;
+	color: white;
+	text-align: center;
+	font-size: 34px;
+}
+
+.feed_create_title {
+	text-align: center;
+	font-family: $fontLight;
+	font-size: 20px;
+	margin: 20px 0;
+}
+
+.feed_input {
+	text-align: center;
+	width: 100%;
+}
+
+.feed_input textarea {
+	font-family: $fontLight;
+	height: 150px;
+	width: 80%;
+	font-size: 18px;
+}
+
+.input_text {
+	outline: none;
+	border: none;
+	background: white;
+	border-radius: 30px;
+	padding: 20px 30px;
+}
+
+.input_submit {
+	outline: none;
+	font-family: $fontSemibold;
+	width: 200px;
+	padding: 5px 10px;
+	border-radius: 30px;
+    color: white;
+	border: none;
+	background: $gradient;
+	transition: 0.2s all;
+}
+
+.feed_auth {
+	outline: none;
+	color: white;
+	font-family: $fontLight;
+	width: 200px;
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	background: gray;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.input_submit:hover {
+	transition: 0.2s all;
+	box-shadow: 0 0 15px $lime_hover;
+}
+
+.feed_submit {
+	margin: 20px 0 50px 0;
+}
+
+.feed_others_title {
+	font-family: $fontLight;
+	text-align: center;
+	font-size: 30px;
+	margin: 20px 0;
+}
+
+.feed_others {
+	overflow-y: auto;
+	height: 70vh;
+	padding: 0 10%;
+}
+
+.feed_others_block {
+	position: relative;
+	padding: 20px;
+	color: black;
+	margin: 50px 0;
+	background: white;
+	border-radius: 20px;
+	border-bottom: 5px solid #2ED297;
+}
+
+.feed_others_block:nth-child(n+7) {
+	display: none;
+}
+
+.feed_others_block_more {
+    margin: 0 auto;
+	margin-bottom: 20px;
+	cursor: pointer;
+	padding: 5px 10px;
+	border-radius: 30px;
+	text-align: center;
+	font-family: $fontSemibold;
+	background:linear-gradient(to right, #2ED297, #07B4CD);
+	color: white;
+	transition: 0.2s all;
+    width: 200px;
+}
+
+.feed_others_block_more:hover {
+	transition: 0.2s all;
+	box-shadow: 0 0 15px #2ED297;
+}
+
+.feed_more {
+	text-align: center;
+}
+
+.feed_user_title {
+	font-family: $fontSemibold;
+	font-size: 20px;
+	padding-left: 3%;
+}
+
+.feed_user_title a {
+	color: black;
+	text-decoration: underline;
+}
+
+.feed_user_title a:hover {
+	color: rgba(0,0,0,0.5);
+}
+
+.feed_user_text {
+	font-family: $fontLight;
+	padding: 0 3%;
+	font-size: 18px;
+	margin: 10px 0;
+}
+
+.feed_user_date {
+	font-size: 14px;
+	font-family: $fontSemibold;
+	color: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 5px;
+	right: 3%;
+}
+
+.feed_status {
+	font-family: $fontLight;
+	font-size: 14px;
+	padding: 0 3%;
+}
+
+.status_published {
+	color: #008800;
+}
+
+.status_moderation {
+	color: #D40000;
+}
+
+.publish_button {
+	position: absolute;
+	bottom: 15px;
+	right: 3%;
+}
+
+.publish_button button {
+	outline: none;
+	background: #e3e3e3;
+	border-radius: 30px;
+	color: #3e3e3e;
+	border: none;
+	font-size: 14px;
+	font-family: $fontLight;
+	padding: 5px 10px;
+}
+
+.publish_button button:hover {
+	background: rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width: 576px) {
+	.feed_user_date {
+		width: 100%;
+		position: relative;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+
+	.wrapper,.feed_others {
+		padding: 0;
+	}
+
+	.feed_others {
+		height: 100%;
+	}
+
+	.feed_input textarea {
+		width: 100%;
+	}
+}

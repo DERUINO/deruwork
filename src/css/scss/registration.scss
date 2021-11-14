@@ -1,0 +1,83 @@
+@import 'fonts.scss';
+@import 'colors.scss';
+
+.register {
+    padding: 5%;
+
+    .reg_title {
+        font-size: 34px;
+        font-family: $fontExtrabold;
+        padding-bottom: 5%;
+        text-align: center;
+    }
+
+    .register_block {
+        background: $block_bg;
+        padding: 30px;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        border-radius: 0 0 5px 5px;
+        border-bottom: 5px solid $lime_hover;
+
+        .reg_block {
+            .reg_input_block {
+                margin-bottom: 20px;
+                position: relative;
+
+                & img {
+                    width: 25px;
+                    top: 9px;
+                    left: 10px;
+                    position: absolute;
+                }
+
+                & input {
+                    padding: 10px;
+                    padding-left: 50px;
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    border-bottom: 2px solid $lime;
+                    background: none;
+                    color: white;
+
+                    &::placeholder {
+                        color: $text;
+                    }
+                }
+            }
+        }
+
+        .check_block {
+            font-size: 14px;
+
+            .check_status_size {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+        }
+
+        .reg_submit {
+
+            & button {
+                box-shadow: 0 0 10px $lime_hover;
+                outline: none;
+                background: $gradient;
+                color: white;
+                font-family: $fontSemibold;
+                padding: 5px 20px;
+                border: none;
+                text-align: center;
+                border-radius: 30px;
+                margin-top: 15px;
+
+                &:hover {
+                    box-shadow: 0 0 15px $lime_hover;
+                }
+            }
+        }
+    }
+}
